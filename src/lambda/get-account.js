@@ -6,7 +6,7 @@ exports.handler = async (event, context) => {
     .then(data => ({
       statusCode: 200,
       body: data,
-      header: { 'Content-Type': event.contentType || 'text/xml' }
+      headers: { 'Content-Type': event.contentType || 'text/xml' }
     }))
     .catch(error => ({ statusCode: 422, body: String(error) }));
 };
