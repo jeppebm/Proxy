@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 
 exports.handler = async (event, context) => {
-  return fetch(context.queryStringParameters.url, { headers: { "Accept": "application/xml" } })
+  return fetch(event.queryStringParameters.url, { headers: { "Accept": "application/xml" } })
     .then(response => response.text())
     .then(data => ({
       statusCode: 200,
